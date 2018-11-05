@@ -1,0 +1,136 @@
+.menu {
+    position: relative;
+    color: #444;
+    background: rgba($color-white, .2);
+    border-radius: .5rem;
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.1);
+    border: 5px solid transparent;
+    width: 100%;
+    transition: border .3s;
+
+    &__image-box {
+        max-width: 50%;
+        display: block;
+        margin-left: 1rem;
+        padding: 2rem 0;
+
+        &--img {
+            width: 100%;
+            height: 100%;
+            border-radius: 2% 40%;
+            filter: brightness(80%);
+            transition: filter .5s ease-in;
+
+            &:hover {
+                filter: brightness(100%);
+            }
+        }
+    }
+
+    &__list {
+        float: right;
+        max-width: 40%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 2rem;
+    }
+
+    &__name {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        margin-top: 1rem;
+
+    }
+
+    &__price {
+
+        color: $color-white;
+        font-size: 3rem;
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 3rem;
+            height: 3rem;
+            color: black;
+            border: 2px solid #fff;
+            border-color: #fff transparent transparent #fff;
+            position: absolute;
+            top: -.5rem;
+            left: -1rem;
+        }
+
+        &::after {
+            content: '';
+            width: 3rem;
+            height: 3rem;
+            border: 2px solid $color-white;
+            border-color: transparent $color-white $color-white transparent;
+            position: absolute;
+            bottom: -.5rem;
+            right: -1rem;
+
+        }
+
+    }
+
+    &__info {}
+
+    &__left {
+        float: right;
+        border: 0;
+        margin: 1rem 2.5rem 1rem 0;
+
+        @include respond(tab-port) {
+            float: initial;
+        }
+    }
+
+    &--box-1 {
+        top: -3rem;
+    }
+
+    &--box-2 {}
+
+    &--box-3 {}
+
+    &--box-4 {
+        top: -3rem;
+    }
+
+    &:hover {
+        border-color: rgba($color-white, .5);
+    }
+
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    @include respond(phone) {
+        padding: 4rem 1rem;
+
+        &__image-box {
+            margin-left: initial;
+            padding: initial;
+        }
+
+        &__list {
+            margin: 2rem;
+
+        }
+    }
+
+    @include respond(tab-port) {
+        &--box-2 {}
+
+        &--box-3 {}
+
+        &--box-4 {
+            top: initial;
+            bottom: -3rem;
+        }
+    }
+}

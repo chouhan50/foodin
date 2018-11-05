@@ -1,0 +1,5 @@
+Thing that needed in this project:
+
+1 blog:
+2 dropdown menu
+3 rating system

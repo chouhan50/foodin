@@ -1,0 +1,80 @@
+.footer {
+    background-color: #333;
+    color: $color-white;
+    padding: 10rem 0 5rem;
+    border-top: 1px solid $color-white;
+
+    &__logo-box {
+        width: 15rem;
+        margin: 0 auto;
+
+        &--logo {
+            width: 100%;
+        }
+    }
+
+    &__address,
+    &__number {
+        display: inline-block;
+        border: 1px #777 dashed;
+        border-radius: 3px;
+        padding: 1rem;
+    }
+
+    &__address {
+        font-size: 2rem;
+        margin: 1.5rem 0;
+
+    }
+
+    &__number {
+        font-size: 1.8rem;
+
+    }
+
+    &__copyright {
+        display: inline-block;
+        color: #777;
+        font-size: 1.6rem;
+        margin-left: 5%;
+    }
+
+    // Footer Social icons
+    &__social-icon {
+        float: right;
+        margin-right: 8%;
+    }
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {
+        display: inline-block;
+        margin-left: 2rem;
+    }
+
+    &__link {
+        color: $color-white;
+        font-size: 2rem;
+        border: 1px solid #777;
+        border-color: transparent #777 #777 transparent;
+        border-radius: 5px;
+        padding: 1rem;
+    }
+
+    @include respond(phone) {
+        &__copyright {
+            display: block;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        &__social-icon {
+            float: initial;
+            text-align: center;
+            margin: initial;
+        }
+    }
+
+}

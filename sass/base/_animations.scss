@@ -1,0 +1,11 @@
+@keyframes iconcooking{
+    0%{
+        transform: translateX(0);
+       opacity: .2;
+        
+    }
+    100%{
+        opacity: .6;
+        transform: translateX(50rem);
+    }
+}

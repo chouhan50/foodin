@@ -1,0 +1,214 @@
+.navigation {
+    padding-top: 2rem;
+    position: relative;
+
+    &__info {
+        float: right;
+        padding-top: 4.5rem;
+
+    }
+
+    &__logo-box {
+        width: 12rem;
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &--logo {
+            width: 100%;
+        }
+    }
+
+    &__main-nav {
+        padding-top: 4.5rem;
+    }
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {
+        display: inline-block;
+        margin-right: 4rem;
+    }
+
+    &__link {
+        color: $color-white;
+        font-size: 1.7rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding-top: .5rem;
+        transition: all .3s;
+
+        &:hover,
+        &:active {
+            color: $color-primary-dark;
+            border-top: 1px solid $color-primary-dark;
+            padding-top: .5rem;
+        }
+    }
+
+
+    // NAVIGATION TOGGLE
+    &__check-box {
+        display: none;
+        transition: all 0.4s .3s;
+    }
+
+    &__toggle {
+        display: none;
+    }
+
+    // PHONE AND TABLET
+    @include respond(tab-port) {
+
+        &__info,
+        &__main-nav {
+            opacity: 0;
+            width: 0;
+            position: fixed;
+            z-index: 650;
+            transition: all .4s;
+        }
+
+        &__main-nav {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &__info {
+            margin-top: 5rem;
+            float: none;
+
+            li {
+                display: inline-block;
+                letter-spacing: .1rem;
+            }
+        }
+
+        &__list {
+            text-align: center;
+        }
+
+        &__item {
+            display: block;
+            font-size: 3rem;
+            letter-spacing: .8rem;
+            padding: 1rem 2rem;
+        }
+
+        &__check-box:checked~&__bg {
+            transform: scale(100);
+        }
+
+        &__check-box:checked~&__info {
+            opacity: 1;
+            width: 100%;
+
+        }
+
+        &__check-box:checked~&__main-nav {
+            opacity: 1;
+            width: 100%;
+
+
+        }
+
+        &__bg {
+            display: inline-block;
+            width: 6rem;
+            height: 6rem;
+            background: radial-gradient($color-primary-light-1, $color-primary-light);
+            border-radius: 50%;
+            position: fixed;
+            top: 3.5rem;
+            left: 7.5rem;
+            z-index: 600;
+            transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+
+        &__toggle {
+            display: inline-block;
+            width: 7rem;
+            height: 7rem;
+            background-color: $color-white;
+            border-radius: 50%;
+            text-align: center;
+            cursor: pointer;
+            position: fixed;
+            top: 3rem;
+            left: 7rem;
+            z-index: 700;
+            transition: all .3s;
+
+            &__icon {
+                margin-top: 3.2rem;
+                position: relative;
+
+                &,
+                &::before,
+                &::after {
+                    width: 3rem;
+                    height: .3rem;
+                    background-color: #777;
+                    display: inline-block;
+                }
+
+                &::before,
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    transition: all .2s;
+                }
+
+                &::before {
+                    top: -.8rem;
+                }
+
+                &::after {
+                    top: .8rem;
+                }
+            }
+
+            &:hover &__icon::before {
+                top: -1rem;
+            }
+
+            &:hover &__icon::after {
+                top: 1rem;
+            }
+        }
+    }
+
+    @include respond(phone) {
+        &__toggle {
+            left: 3rem;
+        }
+
+        &__bg {
+            left: 3rem;
+        }
+    }
+
+    // MEDIA QUERIES
+
+    @include respond (tab-land) {
+        padding: 4rem;
+    }
+
+    @include respond(tab-port) {
+        padding: 2rem 3rem;
+    }
+
+}
+
+.icon-magnifier {
+    color: $color-white;
+    font-size: 2rem;
+    cursor: pointer;
+
+}
